@@ -1,0 +1,16 @@
+.jj{
+    background-color: #26262a;
+    color:  rgb(226, 220, 220);
+    
+}
+br {
+    visibility: hidden;
+}
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
