@@ -97,7 +97,7 @@ export class Container extends Component {
                <>
               <span> <strong> Full Tank Cost: </strong> {resultObj.fullTankCost} </span>
               <span> <strong> Number of Refueling Required: </strong> {resultObj.numberOfRefuelingRequired} </span>
-              <span> <strong> Required Fuel: </strong> {resultObj.requiredFuel} </span>
+              <span> <strong> Total Fuel required: </strong> {resultObj.requiredFuel} </span>
                </>
               } 
             </div>
