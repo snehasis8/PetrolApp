@@ -9,6 +9,7 @@ export class Form extends Component {
     petrolPrice: "",
     tankCapacity: "",
     calculateHit: false,
+    resetEnable:false,
   };
 
   render() {
@@ -41,7 +42,7 @@ export class Form extends Component {
         numberOfRefuelingRequired,
         requiredFuel
       };
-      debugger
+      // debugger
       let errorObj={hasError: false};
      if(bikeMileage.length ===0){
         errorObj.bikeMileage ="Please enter BikeMilage";
@@ -73,6 +74,7 @@ if(errorObj.hasError ===false ) {
 
 
   this.props.handleCalculateValue(result, resultObj);
+  this.setState({resetEnable :true})
 }
       
 
@@ -168,9 +170,18 @@ if(errorObj.hasError ===false ) {
           />
           <br />
         </div>
-        <DefaultButton className="btn-position" onClick={this.handleCalculate}>
+       {this.state.resetEnable ? <DefaultButton className="btn-position" onClick={()=> {
+         this.setState({result: "",
+         bikeMileage: "",
+         petrolPrice: "",
+         tankCapacity: "",
+         calculateHit: false,
+         resetEnable:false, });
+       } }>
+          Reset
+        </DefaultButton> : <DefaultButton className="btn-position" onClick={this.handleCalculate}>
           Calculate
-        </DefaultButton>
+        </DefaultButton>} 
         <br />
       </div>
     );
